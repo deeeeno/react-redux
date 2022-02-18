@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {connect} from 'react-redux';
 import {actionCreators} from '../store';
-import ToDos from '../components/ToDos';
+import ToDo from '../components/ToDo';
 function Home({toDos,addToDo}){
     const [text,setText] = useState("");
     const onChange = (e)=>{
@@ -20,7 +20,9 @@ function Home({toDos,addToDo}){
         <form onSubmit={onSubmit}>
         <input type="text" value={text} onChange={onChange}/><button type="submit">Add</button>
         </form>
-        <ToDos toDos={toDos}/>
+        <ul>
+            {toDos.map((toDo,idx)=><ToDo key={idx} text={toDo.text} id={toDo.id}/>)}
+        </ul>
     </div>;
 }
 

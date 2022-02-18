@@ -9,10 +9,9 @@ import Home from '../routes/Home';
 import Detail from '../routes/Detail';
 function App(){
     return <Router>
-        <div>123123123</div>
         <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/detail" element={<Detail/>}/>
+            <Route path="/detail/:id" element={<Detail/>}/>
         </Routes>
     </Router>
 }
